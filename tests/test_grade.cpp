@@ -33,5 +33,17 @@ int main()
     cout << "40 = " << converter.percentageToGradePoint(40) << endl;
     cout << "105 = " << converter.percentageToGradePoint(105) << endl;
 
+
+    cout << endl;
+    cout << "Grade Point Validation: " << endl;
+
+    cout << "4.00 = " << converter.isValidGradePoint(4.00) << endl;
+    cout << "3.75 = " << converter.isValidGradePoint(3.75) << endl;
+    cout << "3.00 = " << converter.isValidGradePoint(3.00) << endl;
+    cout << "0.00 = " << converter.isValidGradePoint(0.00) << endl;
+    cout << "3.60 = " << converter.isValidGradePoint(3.60) << endl;
+    cout << "4.50 = " << converter.isValidGradePoint(4.50) << endl;
+    cout << "-1.00 = " << converter.isValidGradePoint(-1.00) << endl;
+
     return 0;
 }
