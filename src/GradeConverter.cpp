@@ -1,3 +1,4 @@
+#include <cmath>
 #include "GradeConverter.h"
 
 double GradeConverter::letterToGradePoint(const std::string& letterGrade) const
@@ -58,4 +59,26 @@ double GradeConverter::percentageToGradePoint(double percentage) const
         return -1.0;
 
     return letterToGradePoint(letterGrade);
+}
+
+
+bool GradeConverter::isValidGradePoint(double gradePoint) const
+{
+    const double validGradePoints[] =
+    {
+        4.00, 3.75, 3.50, 3.25, 3.00,
+        2.75, 2.50, 2.25, 0.00
+    };
+
+    int size = sizeof(validGradePoints) / sizeof(validGradePoints[0]);
+
+    for (int i = 0; i < size; i++)
+    {
+        if (std::abs(validGradePoints[i] - gradePoint) < 1e-9)
+        {
+            return true;
+        }
+    }
+
+    return false;
 }
