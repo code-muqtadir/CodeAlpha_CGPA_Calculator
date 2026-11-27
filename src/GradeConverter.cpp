@@ -49,3 +49,13 @@ std::string GradeConverter::percentageToLetterGrade(double percentage) const
     else
         return "F";
 }
+
+double GradeConverter::percentageToGradePoint(double percentage) const
+{
+    std::string letterGrade = percentageToLetterGrade(percentage);
+
+    if (letterGrade == "")
+        return -1.0;
+
+    return letterToGradePoint(letterGrade);
+}
