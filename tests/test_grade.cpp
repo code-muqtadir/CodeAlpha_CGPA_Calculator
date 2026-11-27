@@ -13,5 +13,17 @@ int main()
     cout << "F = " << converter.letterToGradePoint("F") << endl;
     cout << "G = " << converter.letterToGradePoint("G") << endl;
 
+        cout << endl;
+        cout << "Percentage to Letter Grade:" << endl;
+
+    cout << "95 = " << converter.percentageToLetterGrade(95) << endl;
+    cout << "87 = " << converter.percentageToLetterGrade(87) << endl;
+    cout << "82 = " << converter.percentageToLetterGrade(82) << endl;
+    cout << "72 = " << converter.percentageToLetterGrade(72) << endl;
+    cout << "55 = " << converter.percentageToLetterGrade(55) << endl;
+    cout << "40 = " << converter.percentageToLetterGrade(40) << endl;
+
+    cout << "105 = " << converter.percentageToLetterGrade(105) << endl;
+
     return 0;
 }
