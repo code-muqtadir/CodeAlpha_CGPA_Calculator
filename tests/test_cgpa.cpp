@@ -9,8 +9,11 @@ int main()
 
     cout << "===== CGPACalculator Tests =====" << endl;
 
-    cout << "Empty Calculator CGPA: " << calculator.calculateCGPA() << endl;
+    // Test empty calculator...
+    cout << "\n--- Empty Calculator Test ---" << endl;
+    calculator.displayResults();
 
+    // Add courses...
     Course course1("C++", 3.0, "A", 3.75);
     Course course2("Java", 3.0, "A+", 4.00);
     Course course3("Mathematics", 1.5, "B", 3.25);
@@ -19,10 +22,9 @@ int main()
     calculator.addCourse(course2);
     calculator.addCourse(course3);
 
-    cout << "Total Courses: " << calculator.getTotalCourses() << endl;
-    cout << "Total Credits: " << calculator.getTotalCredits() << endl;
-
-    cout << "Calculated CGPA: " << calculator.calculateCGPA() << endl;
+    // Display results...
+    cout << "\n--- Course Results Test ---" << endl;
+    calculator.displayResults();
 
     return 0;
 }
