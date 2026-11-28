@@ -22,3 +22,24 @@ double CGPACalculator::getTotalCredits() const
 
     return totalCredits;
 }
+
+double CGPACalculator::calculateCGPA() const
+{
+    double totalGradePoints = 0.0;
+    double totalCredits = 0.0;
+
+    for (std::size_t i = 0; i < courses.size(); i++)
+    {
+        totalGradePoints += courses[i].getCreditHours() * courses[i].getGradePoint();
+
+        totalCredits += courses[i].getCreditHours();
+    }
+
+    if (totalCredits == 0.0)
+    {
+        return 0.0;
+    }
+        
+
+    return totalGradePoints / totalCredits;
+}
