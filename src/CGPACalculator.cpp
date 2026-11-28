@@ -1,3 +1,5 @@
+#include <iostream>
+#include <iomanip>
 #include <cstddef>
 #include "CGPACalculator.h"
 
@@ -42,4 +44,27 @@ double CGPACalculator::calculateCGPA() const
         
 
     return totalGradePoints / totalCredits;
+}
+
+void CGPACalculator::displayResults() const
+{
+    if (courses.empty())
+    {
+        std::cout << "No courses added." << std::endl;
+        return;
+    }
+
+    std::cout << "\n===== CGPA Calculation Results =====\n";
+
+    for (std::size_t i = 0; i < courses.size(); i++)
+    {
+        std::cout << "\nCourse " << i + 1 << ":\n";
+        courses[i].displayCourse();
+    }
+
+    std::cout << "\nTotal Courses: " << getTotalCourses() << std::endl;
+    std::cout << "Total Credits: " << getTotalCredits() << std::endl;
+
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << "CGPA: " << calculateCGPA() << std::endl;
 }
