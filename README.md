@@ -8,13 +8,16 @@ A console-based CGPA Calculator developed using C++ as part of the CodeAlpha int
 CodeAlpha_CGPA_Calculator/
 ├── include/
 │   ├── Course.h
-│   └── GradeConverter.h
+│   ├── GradeConverter.h
+│   └── CGPACalculator.h
 ├── src/
 │   ├── Course.cpp
 │   ├── GradeConverter.cpp
+│   ├── CGPACalculator.cpp
 │   └── main.cpp
 ├── tests/
-│   └── test_grade.cpp
+│   ├── test_grade.cpp
+│   └── test_cgpa.cpp
 ├── .gitignore
 └── README.md
 ```
@@ -23,7 +26,8 @@ CodeAlpha_CGPA_Calculator/
 
 ### Course Class
 - Stores course name, credit hours, letter grade, and grade point.
-- Provides course information.
+- Provides course information through getter methods.
+- Displays individual course details.
 
 ### GradeConverter Class
 Supports three grade input methods:
@@ -33,6 +37,14 @@ Supports three grade input methods:
 3. Percentage to grade point.
 
 Also validates directly entered grade points.
+
+### CGPACalculator Class
+- Adds and stores multiple courses.
+- Calculates the total number of courses.
+- Calculates total credit hours.
+- Calculates CGPA using the weighted average of course grade points.
+- Displays course details and CGPA calculation results.
+- Handles the case where no courses have been added.
 
 ## Grading System
 
@@ -64,13 +76,24 @@ CGPA = \frac{\sum (CreditHours \times GradePoint)}{\sum CreditHours}
 
 ## Testing
 
-The `tests/` directory contains tests for the GradeConverter class.
+The `tests/` directory contains tests for the `GradeConverter` and `CGPACalculator` classes.
 
-Compile and run the tests from the project root:
+### GradeConverter Tests
+
+Compile and run from the project root:
 
 ```bash
-g++ -std=c++17 -Iinclude tests/test_grade.cpp src/GradeConverter.cpp -o test_grade.exe
+g++ -std=c++17 -Wall -Wextra -Iinclude tests/test_grade.cpp src/GradeConverter.cpp -o test_grade.exe
 ./test_grade.exe
+```
+
+### CGPACalculator Tests
+
+Compile and run from the project root:
+
+```bash
+g++ -std=c++17 -Wall -Wextra -Iinclude tests/test_cgpa.cpp src/CGPACalculator.cpp src/Course.cpp -o test_cgpa.exe
+./test_cgpa.exe
 ```
 
 ## Project Status
@@ -79,6 +102,8 @@ g++ -std=c++17 -Iinclude tests/test_grade.cpp src/GradeConverter.cpp -o test_gra
 - [x] Course class
 - [x] GradeConverter class
 - [x] Grade conversion tests
-- [ ] CGPA calculation
+- [x] CGPACalculator class
+- [x] CGPA calculation
+- [x] CGPA calculation tests
 - [ ] User input handling
 - [ ] Final application testing
