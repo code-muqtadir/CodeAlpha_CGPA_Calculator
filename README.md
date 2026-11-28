@@ -46,6 +46,12 @@ Also validates directly entered grade points.
 - Displays course details and CGPA calculation results.
 - Handles the case where no courses have been added.
 
+### Console Application
+- Accepts multiple courses from the user.
+- Supports both letter-grade and percentage-based input.
+- Validates course names, credit hours, grade choices, letter grades, and percentages.
+- Displays course details and calculates the final CGPA.
+
 ## Grading System
 
 | Letter Grade | Percentage | Grade Point |
@@ -73,6 +79,22 @@ CGPA = \frac{\sum (CreditHours \times GradePoint)}{\sum CreditHours}
 - GCC Compiler
 - Git and GitHub
 - Visual Studio Code
+
+
+## Compilation and Execution
+
+Compile the application from the project root directory:
+
+```bash
+g++ -std=c++17 -Wall -Wextra -Iinclude src/main.cpp src/Course.cpp src/GradeConverter.cpp src/CGPACalculator.cpp -o CGPA_Calculator.exe
+```
+
+Run the application in Windows PowerShell:
+
+```powershell
+.\CGPA_Calculator.exe
+```
+
 
 ## Testing
 
@@ -105,5 +127,5 @@ g++ -std=c++17 -Wall -Wextra -Iinclude tests/test_cgpa.cpp src/CGPACalculator.cp
 - [x] CGPACalculator class
 - [x] CGPA calculation
 - [x] CGPA calculation tests
-- [ ] User input handling
-- [ ] Final application testing
+- [x] User input handling
+- [x] Final application testing
